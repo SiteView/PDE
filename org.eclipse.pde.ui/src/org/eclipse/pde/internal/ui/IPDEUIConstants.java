@@ -17,6 +17,7 @@ import org.eclipse.pde.internal.launching.IPDEConstants;
 public interface IPDEUIConstants extends IPDEConstants {
 	String PLUGIN_ID = "org.eclipse.pde.ui"; //$NON-NLS-1$
 
+	String MONITOR_EDITOR_ID = PLUGIN_ID + ".monitorEditor"; //$NON-NLS-1$
 	String MANIFEST_EDITOR_ID = PLUGIN_ID + ".manifestEditor"; //$NON-NLS-1$
 	String FEATURE_EDITOR_ID = PLUGIN_ID + ".featureEditor"; //$NON-NLS-1$
 	String SITE_EDITOR_ID = PLUGIN_ID + ".siteEditor"; //$NON-NLS-1$

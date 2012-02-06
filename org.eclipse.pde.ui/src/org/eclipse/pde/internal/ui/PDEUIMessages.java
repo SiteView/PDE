@@ -797,6 +797,7 @@ public class PDEUIMessages extends NLS {
 
 	public static String ManifestEditor_ExtensionSection_title;
 	public static String ManifestEditor_OverviewPage_title;
+	public static String MonitorEditor_OverviewPage_title;
 
 	public static String ManifestEditor_ExtensionPointDetails_validate_errorStatus;
 	public static String ManifestEditor_ExtensionPointDetails_schemaLocation_title;

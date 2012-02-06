@@ -94,11 +94,17 @@ public interface ICoreConstants {
 	/** Constant for the string <code>MANIFEST.MF</code> */
 	public final static String MANIFEST_FILENAME = "MANIFEST.MF"; //$NON-NLS-1$
 
+	/** Constant for the string <code>MONITOR.MF</code> */
+	public final static String MONITOR_FILENAME = ".MON"; //$NON-NLS-1$
+
 	/** Constant for the string <code>.options</code> */
 	public final static String OPTIONS_FILENAME = ".options"; //$NON-NLS-1$
 
 	/** Constant for the string <code>manifest.mf</code> */
 	public final static String MANIFEST_FILENAME_LOWER_CASE = MANIFEST_FILENAME.toLowerCase(Locale.ENGLISH);
+
+	/** Constant for the string <code>manifest.mf</code> */
+	public final static String MONIOTOR_FILENAME_EXE_LOWER_CASE = MONITOR_FILENAME.toLowerCase(Locale.ENGLISH);
 
 	/** Constant for the string <code>build.properties</code> */
 	public final static String BUILD_FILENAME_DESCRIPTOR = "build.properties"; //$NON-NLS-1$

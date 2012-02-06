@@ -59,7 +59,7 @@ public class MonitorEditor extends PDELauncherFormEditor implements IShowEditorI
 	 * @see org.eclipse.pde.internal.ui.editor.PDEFormEditor#getEditorID()
 	 */
 	protected String getEditorID() {
-		return IPDEUIConstants.MANIFEST_EDITOR_ID;
+		return IPDEUIConstants.MONITOR_EDITOR_ID;
 	}
 
 	public static IEditorPart openPluginEditor(String id) {
@@ -155,7 +155,7 @@ public class MonitorEditor extends PDELauncherFormEditor implements IShowEditorI
 	public static IEditorPart openEditor(IEditorInput input) {
 		if (input != null) {
 			try {
-				return PDEPlugin.getActivePage().openEditor(input, IPDEUIConstants.MANIFEST_EDITOR_ID);
+				return PDEPlugin.getActivePage().openEditor(input, IPDEUIConstants.MONITOR_EDITOR_ID);
 			} catch (PartInitException e) {
 				PDEPlugin.logException(e);
 			}
@@ -167,27 +167,27 @@ public class MonitorEditor extends PDELauncherFormEditor implements IShowEditorI
 		IFile file = input.getFile();
 		IContainer container = file.getParent();
 
-		IFile manifestFile = null;
+		IFile monitorFile = null;
 		IFile buildFile = null;
 		IFile pluginFile = null;
 		boolean fragment = false;
 
 		String name = file.getName().toLowerCase(Locale.ENGLISH);
-		if (name.equals(ICoreConstants.MANIFEST_FILENAME_LOWER_CASE)) {
+		if (name.endsWith(ICoreConstants.MONIOTOR_FILENAME_EXE_LOWER_CASE)) {
 			if (container instanceof IFolder)
 				container = container.getParent();
-			manifestFile = file;
+			monitorFile = file;
 			buildFile = container.getFile(ICoreConstants.BUILD_PROPERTIES_PATH);
 			pluginFile = createPluginFile(container);
 		} else if (name.equals(ICoreConstants.PLUGIN_FILENAME_DESCRIPTOR) || name.equals(ICoreConstants.FRAGMENT_FILENAME_DESCRIPTOR)) {
 			pluginFile = file;
 			fragment = name.equals(ICoreConstants.FRAGMENT_FILENAME_DESCRIPTOR);
 			buildFile = container.getFile(ICoreConstants.BUILD_PROPERTIES_PATH);
-			manifestFile = container.getFile(ICoreConstants.MANIFEST_PATH);
+			monitorFile = container.getFile(ICoreConstants.MANIFEST_PATH);
 		}
-		if (manifestFile.exists()) {
-			IEditorInput in = new FileEditorInput(manifestFile);
-			manager.putContext(in, new BundleInputContext(this, in, file == manifestFile));
+		if (monitorFile.exists()) {
+			IEditorInput in = new FileEditorInput(monitorFile);
+			manager.putContext(in, new BundleInputContext(this, in, file == monitorFile));
 		}
 		if (pluginFile.exists()) {
 			FileEditorInput in = new FileEditorInput(pluginFile);
@@ -197,7 +197,7 @@ public class MonitorEditor extends PDELauncherFormEditor implements IShowEditorI
 			FileEditorInput in = new FileEditorInput(buildFile);
 			manager.putContext(in, new BuildInputContext(this, in, false));
 		}
-		manager.monitorFile(manifestFile);
+		manager.monitorFile(monitorFile);
 		manager.monitorFile(pluginFile);
 		manager.monitorFile(buildFile);
 
@@ -313,11 +313,11 @@ public class MonitorEditor extends PDELauncherFormEditor implements IShowEditorI
 		try {
 			int index = getActivePage();
 			removePage(0);
-			removePage(0);
-			removePage(0);
-			addPage(0, new RuntimePage(this));
-			addPage(0, new DependenciesPage(this));
-			addPage(0, new OverviewPage(this));
+//			removePage(0);
+//			removePage(0);
+//			addPage(0, new RuntimePage(this));
+//			addPage(0, new DependenciesPage(this));
+			addPage(0, new MonitorOverviewPage(this));
 			setActivePage(index);
 		} catch (PartInitException e) {
 			PDEPlugin.logException(e);
@@ -434,9 +434,9 @@ public class MonitorEditor extends PDELauncherFormEditor implements IShowEditorI
 
 	protected void addEditorPages() {
 		try {
-			addPage(new OverviewPage(this));
-			addPage(new DependenciesPage(this));
-			addPage(new RuntimePage(this));
+			addPage(new MonitorOverviewPage(this));
+			addPage(new MonitorDependenciesPage(this));
+			addPage(new MonitorRuntimePage(this));
 			if (showExtensionTabs()) {
 				addExtensionTabs();
 			}
@@ -698,7 +698,7 @@ public class MonitorEditor extends PDELauncherFormEditor implements IShowEditorI
 
 	protected ILauncherFormPageHelper getLauncherHelper() {
 		if (fLauncherHelper == null)
-			fLauncherHelper = new PluginLauncherFormPageHelper(this);
+			fLauncherHelper = new MonitorLauncherFormPageHelper(this);
 		return fLauncherHelper;
 	}
 }

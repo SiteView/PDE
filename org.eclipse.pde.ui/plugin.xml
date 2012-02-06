@@ -444,6 +444,24 @@
                contentTypeId="org.eclipse.pde.categoryManifest">
          </contentTypeBinding>
       </editor>
+      <editor
+            class="org.eclipse.pde.internal.ui.editor.plugin.MonitorEditor"
+            contributorClass="org.eclipse.pde.internal.ui.editor.plugin.MonitorEditor"
+            default="true"
+            icon="$nl$/icons/obj16/plugin_mf_obj.gif"
+            id="org.eclipse.pde.ui.monitorEditor"
+            matchingStrategy="org.eclipse.pde.internal.ui.editor.plugin.MonitorEditorMatchingStrategy"
+            name="%editors.pluginMonitor.name">
+         <contentTypeBinding
+               contentTypeId="org.eclipse.pde.pluginManifest">
+         </contentTypeBinding>
+         <contentTypeBinding
+               contentTypeId="org.eclipse.pde.fragmentManifest">
+         </contentTypeBinding>
+         <contentTypeBinding
+               contentTypeId="org.eclipse.pde.bundleManifest">
+         </contentTypeBinding>
+      </editor>
 <!--      <editor
             class="org.eclipse.pde.internal.ui.editor.toc.TocEditor"
             contributorClass="org.eclipse.pde.internal.ui.editor.toc.TocEditorContributor"

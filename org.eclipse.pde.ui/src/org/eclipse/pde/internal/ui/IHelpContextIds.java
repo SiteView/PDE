@@ -191,6 +191,12 @@ public interface IHelpContextIds {
 	public static final String MANIFEST_SOURCE_PAGE = PREFIX + "manifest_source_page"; //$NON-NLS-1$
 
 	// Manifest Editor
+	public static final String MONITOR_WELCOME = PREFIX + "monitor_welcome"; //$NON-NLS-1$
+	public static final String MONITOR_PLUGIN_OVERVIEW = PREFIX + "monitor_plugin_overview"; //$NON-NLS-1$
+	public static final String MONITOR_PLUGIN_DEPENDENCIES = PREFIX + "monitor_plugin_dependencies"; //$NON-NLS-1$
+	public static final String MONITOR_PLUGIN_RUNTIME = PREFIX + "monitor_plugin_runtime"; //$NON-NLS-1$
+
+	// Manifest Editor
 	public static final String MANIFEST_WELCOME = PREFIX + "manifest_welcome"; //$NON-NLS-1$
 	public static final String MANIFEST_PLUGIN_OVERVIEW = PREFIX + "manifest_plugin_overview"; //$NON-NLS-1$
 	public static final String MANIFEST_PLUGIN_DEPENDENCIES = PREFIX + "manifest_plugin_dependencies"; //$NON-NLS-1$

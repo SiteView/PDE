@@ -88,6 +88,18 @@ public class RequiresSection extends TableSection implements IModelChangedListen
 		resetImportInsertIndex();
 	}
 
+	public RequiresSection(MonitorDependenciesPage page, Composite parent, String[] labels) {
+		super(page, parent, Section.DESCRIPTION, labels);
+		getSection().setText(PDEUIMessages.RequiresSection_title);
+		boolean fragment = ((IPluginModelBase) getPage().getModel()).isFragmentModel();
+		if (fragment)
+			getSection().setDescription(PDEUIMessages.RequiresSection_fDesc);
+		else
+			getSection().setDescription(PDEUIMessages.RequiresSection_desc);
+		getTablePart().setEditable(false);
+		resetImportInsertIndex();
+	}
+
 	public void createClient(Section section, FormToolkit toolkit) {
 		Composite container = createClientContainer(section, 2, toolkit);
 		createViewerPartControl(container, SWT.MULTI, 2, toolkit);
