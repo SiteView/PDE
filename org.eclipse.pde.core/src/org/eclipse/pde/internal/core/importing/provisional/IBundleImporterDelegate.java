@@ -38,7 +38,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
  * work or that it will remain the same. Please do not use this API without
  * consulting with the PDE team.
  * </p>
- * @since 3.6
+ * @since 3.8
  * @noextend This interface is not intended to be extended by clients.
  */
 public interface IBundleImporterDelegate {
