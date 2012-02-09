@@ -9,6 +9,11 @@
  *     IBM Corporation - initial API and implementation
  *     Peter Friese <peter.friese@gentleware.com> - bug 199431
  *******************************************************************************/
+//TODO: change the underlining model to monitor, using java source code as the storage
+// 		add a layer on top of jdt (javamodel) to parse the java code to generate the 
+//		monitor model: should change from IPluginObject and under
+// FormEntry: valuechanges event is the model connection
+
 package org.eclipse.pde.internal.ui.editor.plugin;
 
 import org.eclipse.core.runtime.CoreException;

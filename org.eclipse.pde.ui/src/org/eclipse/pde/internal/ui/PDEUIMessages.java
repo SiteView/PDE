@@ -16,6 +16,10 @@ import org.eclipse.osgi.util.NLS;
 public class PDEUIMessages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.pde.internal.ui.pderesources";//$NON-NLS-1$
 
+	public static String MonitorEditor_MonitorSpecSection_desc;
+
+	public static String MonitorEditor_ContentSection_title;
+
 	public static String AbstractLauncherToolbar_noProblems;
 
 	public static String AbstractLauncherToolbar_noSelection;

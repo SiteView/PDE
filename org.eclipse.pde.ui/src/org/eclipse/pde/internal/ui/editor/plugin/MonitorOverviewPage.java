@@ -79,10 +79,13 @@ public class MonitorOverviewPage extends LaunchShortcutOverviewPage {
 		Composite left = toolkit.createComposite(body);
 		left.setLayout(FormLayoutFactory.createFormPaneTableWrapLayout(false, 1));
 		left.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB));
-		if (isFragment())
-			fInfoSection = new FragmentMonitorInfoSection(this, left);
-		else
-			fInfoSection = new PluginMonitorInfoSection(this, left);
+//		if (isFragment())
+//		fInfoSection = new FragmentMonitorInfoSection(this, left);
+//		else
+//		fInfoSection = new PluginMonitorInfoSection(this, left);
+
+		fInfoSection = new SimpleMonitorInfoSection(this, left);
+//		fInfoSection = new PluginMonitorInfoSection(this, left);
 		managedForm.addPart(fInfoSection);
 		if (isBundle())
 			managedForm.addPart(new ExecutionEnvironmentSection(this, left));
@@ -102,11 +105,13 @@ public class MonitorOverviewPage extends LaunchShortcutOverviewPage {
 
 	private void createContentSection(IManagedForm managedForm, Composite parent, FormToolkit toolkit) {
 		String sectionTitle;
-		if (isFragment()) {
-			sectionTitle = PDEUIMessages.ManifestEditor_ContentSection_ftitle;
-		} else {
-			sectionTitle = PDEUIMessages.ManifestEditor_ContentSection_title;
-		}
+//		if (isFragment()) {
+//			sectionTitle = PDEUIMessages.ManifestEditor_ContentSection_ftitle;
+//		} else {
+//			sectionTitle = PDEUIMessages.ManifestEditor_ContentSection_title;
+//		}
+		sectionTitle = PDEUIMessages.MonitorEditor_ContentSection_title;
+
 		Section section = createStaticSection(toolkit, parent, sectionTitle);
 
 		Composite container = createStaticSectionClient(toolkit, section);
