@@ -88,7 +88,7 @@ public class MonitorOverviewPage extends LaunchShortcutOverviewPage {
 //		fInfoSection = new PluginMonitorInfoSection(this, left);
 		managedForm.addPart(fInfoSection);
 		if (isBundle())
-			managedForm.addPart(new ExecutionEnvironmentSection(this, left));
+			managedForm.addPart(new MonitorExecutionEnvironmentSection(this, left));
 
 		Composite right = toolkit.createComposite(body);
 		right.setLayout(FormLayoutFactory.createFormPaneTableWrapLayout(false, 1));

@@ -2305,6 +2305,7 @@ public class PDEUIMessages extends NLS {
 	public static String NewProjectCreationPage_environmentsButton;
 
 	public static String RequiredExecutionEnvironmentSection_title;
+	public static String RequiredMonitorExecutionEnvironmentSection_title;
 
 	public static String PluginGeneralInfoSection_lazyStart;
 
@@ -2609,20 +2610,22 @@ public class PDEUIMessages extends NLS {
 	public static String EditorUtilities_missingIcoNote;
 
 	public static String RequiredExecutionEnvironmentSection_add;
-
 	public static String RequiredExecutionEnvironmentSection_remove;
-
 	public static String RequiredExecutionEnvironmentSection_up;
-
 	public static String RequiredExecutionEnvironmentSection_down;
-
 	public static String RequiredExecutionEnvironmentSection_fragmentDesc;
-
 	public static String RequiredExecutionEnvironmentSection_pluginDesc;
-
 	public static String RequiredExecutionEnvironmentSection_dialog_title;
-
 	public static String RequiredExecutionEnvironmentSection_dialogMessage;
+
+	public static String RequiredMonitorExecutionEnvironmentSection_add;
+	public static String RequiredMonitorExecutionEnvironmentSection_remove;
+	public static String RequiredMonitorExecutionEnvironmentSection_up;
+	public static String RequiredMonitorExecutionEnvironmentSection_down;
+	public static String RequiredMonitorExecutionEnvironmentSection_fragmentDesc;
+	public static String RequiredMonitorExecutionEnvironmentSection_pluginDesc;
+	public static String RequiredMonitorExecutionEnvironmentSection_dialog_title;
+	public static String RequiredMonitorExecutionEnvironmentSection_dialogMessage;
 
 	public static String BuildExecutionEnvironmentSection_configure;
 
